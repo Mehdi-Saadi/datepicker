@@ -3,7 +3,7 @@ Datepicker component.
 </h1>
 
 <div align="center">
-  <img src="./src/assets/picture/datepicker.png" alt="Markdownify" width="200"></a>
+  <img src="./src/assets/picture/datepicker.png" alt="">
 </div>
 
 ### Description
