@@ -16,10 +16,8 @@ This simple component helps you make it your favorite date picker. :)
 ### How to use
 
 - Just add `script.js` file to your project.
-<br>
 - Using CDNs, this component does not need to install tools for testing and use in the project.
-<br>
-- But I <b>recommend</b> installing [Tailwind](https://tailwindcss.com/docs/installation) and [Alpine](https://alpinejs.dev/essentials/installation) if you haven't already
+- But I <b>recommend</b> installing <b>Tailwind</b> and <b>Alpine</b> if you haven't already
 <br>
 <br>
 I hope this component helps you!
