@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Datepicker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] {display: none !important;}
+    </style>
+</head>
+<body>
+<div class="flex justify-center my-10">
+    <!-- datepicker -->
+    <div x-data="datepicker()" x-init="[initDate(), initDatepicker()]" x-cloak>
+        <div class="w-64 h-64 rounded-lg ring-1 ring-gray-100 shadow-lg">
+            <div class="px-3 py-2">
+                <!-- header -->
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-sm font-bold text-gray-800">
+                        <span x-text="MONTH_NAMES[month]"></span>
+                        <span x-text="year"></span>
+                    </div>
+                    <div class="text-gray-500 space-x-1">
+                        <button type="button" class="transition ease-in-out duration-100 inline-flex p-1 rounded" :class="month === currentMonth && year === currentYear ? 'opacity-25' : 'hover:bg-gray-100'" :disabled="month === currentMonth && year === currentYear" @click="previousMonth()">
+                            <svg class="h-4 w-4 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="transition ease-in-out duration-100 inline-flex hover:bg-gray-100 p-1 rounded" @click="nextMonth()">
+                            <svg class="h-4 w-4 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-7 text-center -mx-1.5 text-gray-500 mb-2" style="font-size: 10px">
+                    <!-- days of week -->
+                    <span>M</span>
+                    <span>T</span>
+                    <span>W</span>
+                    <span>T</span>
+                    <span>F</span>
+                    <span>S</span>
+                    <span>S</span>
+                </div>
+
+                <div class="grid grid-cols-7 text-center mb-3 -mx-1.5">
+                    <template x-for="blankDay in blankDays">
+                        <span class="w-6 h-6 mb-1"></span>
+                    </template>
+                    <template x-for="(date, dateIndex) in daysOfMonth" :key="dateIndex">
+                        <span x-text="date" @click="getDateValue(date)" class="w-6 h-6 mx-auto mb-1 flex justify-center items-center text-xs rounded-full" :class="[isPassedDay(date) ? 'opacity-25' : 'cursor-pointer transition ease-in-out duration-100 hover:bg-gray-100', isToday(date) ? 'text-red-800 font-bold' : 'text-gray-700']"></span>
+                    </template>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</div>
+</body>
+</html>
