@@ -12,7 +12,7 @@ This is a simple datepicker using [Tailwindcss](https://tailwindcss.com/) and [A
 <br>
 There are multiple awesome datepickers to use, but most of them have limitations such as UI customization or changing the logic directly.
 <br>
-This simple component helps you make it your favorite date picker. :)
+This simple component helps you make it your favorite datepicker. :)
 ### How to use
 
 - Just add `script.js` file to your project.
